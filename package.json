@@ -1,0 +1,24 @@
+{
+  "name": "sesion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sesion/sesion.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon --exec node sesion/sesion.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons8-criptomoneda-48.png">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="sesion.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Botón de Volver al Inicio -->
+        <!-- Cambia 'index.html' por la URL de tu página de inicio si es diferente -->
+        <a href="../index.html" class="btn-back">Back to Home</a>
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'login')">Log In</button>
+            <button class="tab-btn active" onclick="openTab(event, 'signup')">Sign Up</button>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div id="signup" class="form-content active">
+            <h2>Create Account</h2>
+            <form>
+                <div class="row">
+                    <div class="input-group">
+                        <label>First Name</label>
+                        <input type="text" required placeholder="Ex.: Rick">
+                    </div>
+                    <div class="input-group">
+                        <label>Last Name</label>
+                        <input type="text" required placeholder="Ex.: Sanchez">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" required placeholder="Ex.: RcikSanchez@exampleDimension-c136.com">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" required placeholder="******">
+                    <label>Your password must be at least 5 characters long. It must contain at least 1 uppercase letter.</label>
+                </div>
+                <button type="submit" class="btn">Get Started</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Inicio de Sesión -->
+        <div id="login" class="form-content">
+            <h2>Welcome Back</h2>
+            <form>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" required placeholder="RcikSanchez@exampleDimension-c136.com">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabBtn;
+
+            tabContent = document.getElementsByClassName("form-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+
+
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+    <!-- Formulario de Inicio de Sesión -->
+    <style>
+    /* --- Reset Básico --- */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: white;
+    }
+
+    /* --- Contenedor Principal --- */
+    .container {
+        background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+        width: 100%;
+        max-width: 420px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+        margin: 20px;
+        position: relative;
+    }
+
+    /* --- Botón "Volver al Inicio" --- */
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 25px;
+        background-color: transparent;
+        border: 1px solid #dcdcdc;
+        border-radius: 6px;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-back:hover {
+        background-color: #f5f5f5;
+        border-color: white;
+        color: black;
+    }
+
+    .btn-back::before {
+        content: "←";
+        margin-right: 8px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    /* --- Pestañas (Tabs) --- */
+    .tabs {
+        display: flex;
+        border-bottom: 2px solid #e0e0e0;
+        margin-bottom: 30px;
+    }
+
+    .tab-btn {
+        flex: 1;
+        padding: 15px;
+        background: none;
+        border: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid transparent;
+    }
+
+    .tab-btn:hover {
+        background-color:black;
+        color: springgreen;
+        color: 1;
+        border-color: white;
+    }
+
+    .tab-btn.active {
+        color: springgreen;
+        border-bottom: 5px solid white;
+
+
+    }
+
+    /* --- Contenido de los Formularios --- */
+    .form-content {
+        display: none;
+        animation: fadeIn 0.4s ease;
+    }
+
+    .form-content.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 25px;
+        font-weight: 500;
+    }
+
+    /* --- Inputs y Labels --- */
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: white;
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #dcdcdc;
+        border-radius: 6px;
+        background-color: #fafafa;
+        font-size: 14px;
+        transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #424242;
+        background-color: #fff;
+        box-shadow: 0 0 0 3px rgba(66, 66, 66, 0.1);
+    }
+
+    /* Fila para Nombre y Apellido */
+    .row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .row .input-group {
+        flex: 1;
+    }
+
+    /* --- Botones Principales --- */
+    .btn {
+        width: 100%;
+        padding: 14px;
+        background-color: rgb(250, 204, 21);
+        color: #000000;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: springgreen;
+        color: black;
+        transform: springgreen;
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .forgot-link {
+        display: block;
+        text-align: right;
+        margin-top: 10px;
+        color: #757575;
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    .forgot-link:hover {
+        text-decoration: underline;
+        box-shadow: 0 0 0 3px springgreen;
+    }
+    </style>
+</body>
+</html>

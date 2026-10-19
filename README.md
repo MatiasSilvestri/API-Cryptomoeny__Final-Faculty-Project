@@ -1,4 +1,4 @@
-# CryptoInfo 
+# CryptoInfo v0.2.1
 
 Es una Plataforma Web Desarrollada con el propósito de proporcionar información actualizada sobre el Precio de Criptomonedas más relevantes del mercado, presentando sus valores expresados en moneda argentina. 
 
